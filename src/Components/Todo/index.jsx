@@ -4,7 +4,7 @@ import useForm from '../../hooks/form';
 import { v4 as uuid } from 'uuid';
 
 const Todo = () => {
-
+//move these items to the App.jsx since they will be context values? to be accessed by children?
   const [defaultValues] = useState({
     difficulty: 4,
   });
