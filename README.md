@@ -53,4 +53,4 @@ TODO:Documentation
 - Describe how global state is consumed by the components.
 - Describe the operation of the hook: useForm().
 
-[UML Diagram](https://www.figma.com/file/dx1Awo0bGebLm6EGnFW8Dc/Lab-31?node-id=0%3A1&t=nrQOfwFICLPRH9i2-1)
+![UML Diagram](/Lab%2031.png)
