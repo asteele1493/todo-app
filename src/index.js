@@ -6,9 +6,9 @@ import App from './App';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+  <MantineProvider>
   <React.StrictMode>
-     <MantineProvider withGlobalStyles withNormalizeCSS>
     <App />
-    </MantineProvider>
   </React.StrictMode>
+  </MantineProvider>
 );
