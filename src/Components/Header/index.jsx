@@ -6,11 +6,9 @@ function Header () {
   const settings = useContext(SettingsContext);
 
   return (
-    <header data-testid="todo-header">
-        <h1 data-testid="todo-h1">
-          To Do List: {settings.incomplete} items pending
-        </h1>
-      </header>
+    <header>
+      <h1>To-Do List</h1>
+    </header>
   );
 }
 

@@ -1,7 +1,7 @@
 import React, {useState, useEffect } from 'react';
 import useForm from '../../hooks/form';
 import { v4 as uuid } from "uuid";
-
+import { Container } from '@mantine/core';
 
 export const SettingsContext = React.createContext();
 
@@ -56,9 +56,11 @@ function SettingsProvider(props) {
   }
 
   return (
+    <Container>
     <SettingsContext.Provider value={exportedSettings}>
       {props.children}
     </SettingsContext.Provider>
+    </Container>
   )
 
 }
