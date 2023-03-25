@@ -1,20 +1,16 @@
 import React, { useContext } from "react";
-import Context from "../../App";
+import { SettingsContext } from "../../Context/Settings/Settings";
 // import useForm from '../../hooks/form';
 
 // import { v4 as uuid } from 'uuid';
 
-const Todo = (props) => {
-  const defaultUser = useContext(Context);
+function Todo (props) {
+
+  //components can read context by passing it to a useContext hook.
+  let defaultUser = useContext(SettingsContext);
 
   return (
-    <>
-      <header data-testid="todo-header">
-        <h1 data-testid="todo-h1">
-          To Do List: {defaultUser.incomplete} items pending
-        </h1>
-      </header>
-
+    <div className='Todo'>
       <form onSubmit={props.handleSubmit}>
         <h2>Add To Do Item</h2>
 
@@ -42,7 +38,7 @@ const Todo = (props) => {
           <span>Difficulty</span>
           <input
             onChange={props.handleChange}
-            defaultValue={defaultUser.defaultValue.difficulty}
+            defaultValue={defaultUser.defaultValues.difficulty}
             type="range"
             min={1}
             max={5}
@@ -54,7 +50,7 @@ const Todo = (props) => {
           <button type="submit">Add Item</button>
         </label>
       </form>
-    </>
+    </div>
   );
 };
 

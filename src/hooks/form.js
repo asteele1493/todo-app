@@ -10,6 +10,7 @@ const useForm = (callback, defaultValues={}) => {
   };
 
   const handleChange = (event) => {
+    event.preventDefault();
     let name, value;
     if(typeof(event) === 'object'){
       name = event.target.name;
