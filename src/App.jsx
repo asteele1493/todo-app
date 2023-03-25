@@ -1,20 +1,23 @@
-import React, { createContext } from 'react';
-import Todo from './Components/Todo';
-import Header from './Components/Header';
-import List from './Components/List';
-import Footer from './Components/Footer';
+import React from "react";
+import "../src/App.scss";
+import SettingsContext from "./Context/Settings/Settings";
+import Todo from "./Components/Todo";
+import List from "./Components/List";
+import Header from "./Components/Header"
+import { MantineProvider } from "@mantine/core";
 
-const appContext = createContext(null);
 
-export default class App extends React.Component {
-  render() {
-    return (
-      <appContext.Provider>
-      <Header />
+const App = () => {
+  return (
+    <MantineProvider withCSSVariables withGlobalStyles withNormalizeCSS>
+    <SettingsContext>
+      <Header/>
       <Todo />
+        <div>Hello!</div>
       <List />
-      <Footer />
-      </appContext.Provider>
-    );
-  }
-}
+    </SettingsContext>
+   </MantineProvider>
+  );
+};
+
+export default App;
