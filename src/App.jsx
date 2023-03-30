@@ -16,8 +16,9 @@ import { MantineProvider } from "@mantine/core";
 
 const App = () => {
   return (
-    <MantineProvider withCSSVariables withGlobalStyles withNormalizeCSS>
     <SettingsContext>
+    <MantineProvider withCSSVariables withGlobalStyles withNormalizeCSS>
+   
     {/* <Router> */}
       {/* <Navbar> */}
       {/* <Navbar.Section grow mt="lg"> */}
@@ -33,8 +34,9 @@ const App = () => {
         <div>Hello!</div>
       <List />
       {/* </Router> */}
+      </MantineProvider>
     </SettingsContext>
-   </MantineProvider>
+   
   );
 };
 

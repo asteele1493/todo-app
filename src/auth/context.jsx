@@ -1,6 +1,7 @@
 import React from 'react';
 import jwt_decode from 'jwt-decode';
 import jwtDecode from 'jwt-decode';
+import axios from 'axios';
 
 const testUsers = {
   Administrator: {
@@ -41,15 +42,26 @@ class LoginProvider extends React.Component {
     };
   }
 
-  login = ( username, password ) => {
+  login = async ( username, password ) => {
 
-    let { loggedIn, user, token } = this.state;
 
-    let validUser = testUsers[username];
+    let url = process.env.REACT_APP_API;
 
-    if( validUser && validUser.password === password ) {
+    const axiosReq = {
+      baseUrl: url,
+      url: '/signin',
+      method: 'post',
+      auth: {
+        username, password
+      }
+    }
+
+    let response = await axios(axiosReq);
+    const { token } = response.data;
+
+    if( token ) {
        try {
-         this.validateToken(validUser.token);
+         this.validateToken(token);
        } catch(e) {
          this.setLoginState( false, null, {}, e.message );
        }
